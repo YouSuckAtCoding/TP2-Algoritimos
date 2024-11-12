@@ -1,4 +1,5 @@
-class TabelaHash():
+class TabelaHash(): #Isso não ficou muito bom... Imagino que a impelmentação correta seria
+                    #Com linked list. 
     def __init__(self, size):
         self.size = size;
         self.keys = [] * self.size;
@@ -24,8 +25,8 @@ class TabelaHash():
     def remover(self, key):
         for i in range(0, self.index):
             if(self.keys[i] == key):
-                    self.values[i] = "";
-                    self.keys[i] = "";
+                    self.values.remove(self.values[i]);
+                    self.keys.remove(self.keys[i]);
                     return;
 
 
@@ -35,6 +36,8 @@ print(x.inserir(2, "claus"));
 x.inserir(3, "claus");
 print(x.buscar(3));
 x.remover(2);
+print(x.buscar(2));
+x.inserir(2, "kappa");
 print(x.buscar(2));
 
         
